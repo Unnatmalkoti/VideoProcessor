@@ -23,7 +23,14 @@ class Stitcher(App):
                             }
                 )
         layout.add_widget(Label(text='Stitcher',  font_size='50sp'))
-        layout.add_widget(FileChooserListView())
+
+        self.filechooser = FileChooserListView(
+                                              rootpath=".\\",
+                                              path=".\\input",
+                                              multiselect=True
+                                              )
+        layout.add_widget(self.filechooser)
+
         #layout.add_widget(Label(text='Body',  font_size='50sp'))
         return(layout)
 
